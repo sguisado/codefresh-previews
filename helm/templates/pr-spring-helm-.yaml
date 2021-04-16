@@ -1,0 +1,30 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  name: pr-spring-helm-
+  namespace: argocd
+spec:
+  destination:
+    namespace: pr-spring-helm-
+    server: https://kubernetes.default.svc
+  project: previews
+  source:
+    helm:
+      values: |
+        image:
+          tag: "c672cf8"
+        ingress:
+          host: pr-spring-helm-.35.197.205.55.xip.io
+      version: v3
+    path: helm
+    repoURL: https://github.com/sguisado/spring-helm
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
