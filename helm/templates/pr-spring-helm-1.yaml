@@ -15,8 +15,15 @@ spec:
     helm:
       values: |
         image:
-          tag: "f3c5736"
+          tag: "8f01df7"
         ingress:
+          hosts:
+            - host: pr-spring-helm-1.35.197.195.146.xip.io
+              paths:
+              - path: /
+                backend:
+                  serviceName: srping-helm
+                  servicePort: 8080
           host: pr-spring-helm-1.35.197.205.55.xip.io
       version: v3
     path: helm
