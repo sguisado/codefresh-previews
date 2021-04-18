@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         image:
-          tag: "0bf7373"
+          tag: "db56156"
         ingress:
           hosts:
             - host: pr-spring-helm-3.35.197.195.146.xip.io
