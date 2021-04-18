@@ -15,10 +15,7 @@ spec:
     helm:
       values: |
         image:
-          tag: "e2da8d8"
-        service:
-          annotations:
-            kubernetes.io/ingress.class: nginx
+          tag: "2a34af9"
         ingress:
           hosts:
             - host: pr-spring-helm-2.35.197.195.146.xip.io
